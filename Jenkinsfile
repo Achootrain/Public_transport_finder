@@ -21,7 +21,7 @@ pipeline {
 
         stage('3. Build & Deploy (Docker Compose)') {
             steps {
-                sh 'docker-compose up -d --build'
+                sh 'docker compose up -d --build'
                 
                 sh 'docker image prune -f'
             }
