@@ -16,6 +16,7 @@ pipeline {
                         sh "${scannerHome}/bin/sonar-scanner \
                         -Dsonar.projectKey=transit-bus-js \
                         -Dsonar.sources=src \
+                        -Dsonar.exclusions=data/** \
                         -Dsonar.host.url=http://localhost:9000"
                     }
                 }
