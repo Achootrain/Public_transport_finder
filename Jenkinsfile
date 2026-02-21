@@ -13,11 +13,7 @@ pipeline {
                 script {
                     def scannerHome = tool 'SonarScanner'
                     withSonarQubeEnv('MySonarServer') { 
-                        sh "${scannerHome}/bin/sonar-scanner \
-                        -Dsonar.projectKey=transit-bus-js \
-                        -Dsonar.sources=src \
-                        -Dsonar.exclusions=data/** \
-                        -Dsonar.host.url=http://localhost:9000"
+                        sh "${scannerHome}/bin/sonar-scanner"
                     }
                 }
             }
