@@ -1,0 +1,2802 @@
+[
+  {
+    "idx": 1,
+    "lat": 21.02959,
+    "lng": 105.80199,
+    "weight": 22,
+    "routesCount": 22
+  },
+  {
+    "idx": 2,
+    "lat": 20.96786,
+    "lng": 105.84184,
+    "weight": 22,
+    "routesCount": 22
+  },
+  {
+    "idx": 3,
+    "lat": 21.02366,
+    "lng": 105.85682,
+    "weight": 20,
+    "routesCount": 20
+  },
+  {
+    "idx": 4,
+    "lat": 21.04157,
+    "lng": 105.84935,
+    "weight": 20,
+    "routesCount": 20
+  },
+  {
+    "idx": 5,
+    "lat": 20.98082,
+    "lng": 105.8413,
+    "weight": 17,
+    "routesCount": 17
+  },
+  {
+    "idx": 6,
+    "lat": 20.96205,
+    "lng": 105.84189,
+    "weight": 17,
+    "routesCount": 17
+  },
+  {
+    "idx": 7,
+    "lat": 21.02821,
+    "lng": 105.77895,
+    "weight": 15,
+    "routesCount": 15
+  },
+  {
+    "idx": 8,
+    "lat": 21.03654,
+    "lng": 105.78093,
+    "weight": 14,
+    "routesCount": 14
+  },
+  {
+    "idx": 9,
+    "lat": 21.03035,
+    "lng": 105.82693,
+    "weight": 14,
+    "routesCount": 14
+  },
+  {
+    "idx": 10,
+    "lat": 20.99564,
+    "lng": 105.84985,
+    "weight": 13,
+    "routesCount": 13
+  },
+  {
+    "idx": 11,
+    "lat": 21.02044,
+    "lng": 105.86185,
+    "weight": 13,
+    "routesCount": 13
+  },
+  {
+    "idx": 12,
+    "lat": 21.03639,
+    "lng": 105.78999,
+    "weight": 12,
+    "routesCount": 12
+  },
+  {
+    "idx": 13,
+    "lat": 20.9977,
+    "lng": 105.86749,
+    "weight": 12,
+    "routesCount": 12
+  },
+  {
+    "idx": 14,
+    "lat": 21.04749,
+    "lng": 105.8794,
+    "weight": 12,
+    "routesCount": 12
+  },
+  {
+    "idx": 15,
+    "lat": 20.95624,
+    "lng": 105.75695,
+    "weight": 12,
+    "routesCount": 12
+  },
+  {
+    "idx": 16,
+    "lat": 20.98273,
+    "lng": 105.79085,
+    "weight": 12,
+    "routesCount": 12
+  },
+  {
+    "idx": 17,
+    "lat": 21.03382,
+    "lng": 105.79731,
+    "weight": 12,
+    "routesCount": 12
+  },
+  {
+    "idx": 18,
+    "lat": 21.00862,
+    "lng": 105.85111,
+    "weight": 11,
+    "routesCount": 11
+  },
+  {
+    "idx": 19,
+    "lat": 21.00945,
+    "lng": 105.82425,
+    "weight": 11,
+    "routesCount": 11
+  },
+  {
+    "idx": 20,
+    "lat": 20.97294,
+    "lng": 105.84071,
+    "weight": 11,
+    "routesCount": 11
+  },
+  {
+    "idx": 21,
+    "lat": 21.05526,
+    "lng": 105.88771,
+    "weight": 11,
+    "routesCount": 11
+  },
+  {
+    "idx": 22,
+    "lat": 21.03549,
+    "lng": 105.85493,
+    "weight": 11,
+    "routesCount": 11
+  },
+  {
+    "idx": 23,
+    "lat": 21.0208,
+    "lng": 105.77999,
+    "weight": 11,
+    "routesCount": 11
+  },
+  {
+    "idx": 24,
+    "lat": 21.05451,
+    "lng": 105.78228,
+    "weight": 11,
+    "routesCount": 11
+  },
+  {
+    "idx": 25,
+    "lat": 20.96017,
+    "lng": 105.76189,
+    "weight": 11,
+    "routesCount": 11
+  },
+  {
+    "idx": 26,
+    "lat": 21.03048,
+    "lng": 105.83603,
+    "weight": 10,
+    "routesCount": 10
+  },
+  {
+    "idx": 27,
+    "lat": 21.0281,
+    "lng": 105.84408,
+    "weight": 10,
+    "routesCount": 10
+  },
+  {
+    "idx": 28,
+    "lat": 21.01863,
+    "lng": 105.84133,
+    "weight": 10,
+    "routesCount": 10
+  },
+  {
+    "idx": 29,
+    "lat": 20.99624,
+    "lng": 105.86242,
+    "weight": 10,
+    "routesCount": 10
+  },
+  {
+    "idx": 30,
+    "lat": 20.99583,
+    "lng": 105.80932,
+    "weight": 10,
+    "routesCount": 10
+  },
+  {
+    "idx": 31,
+    "lat": 21.0442,
+    "lng": 105.87271,
+    "weight": 10,
+    "routesCount": 10
+  },
+  {
+    "idx": 32,
+    "lat": 21.00499,
+    "lng": 105.79204,
+    "weight": 10,
+    "routesCount": 10
+  },
+  {
+    "idx": 33,
+    "lat": 21.07615,
+    "lng": 105.78601,
+    "weight": 10,
+    "routesCount": 10
+  },
+  {
+    "idx": 34,
+    "lat": 20.96355,
+    "lng": 105.76655,
+    "weight": 10,
+    "routesCount": 10
+  },
+  {
+    "idx": 35,
+    "lat": 21.02317,
+    "lng": 105.90467,
+    "weight": 10,
+    "routesCount": 10
+  },
+  {
+    "idx": 36,
+    "lat": 21.06821,
+    "lng": 105.82646,
+    "weight": 9,
+    "routesCount": 9
+  },
+  {
+    "idx": 37,
+    "lat": 21.0199,
+    "lng": 105.80813,
+    "weight": 9,
+    "routesCount": 9
+  },
+  {
+    "idx": 38,
+    "lat": 20.99526,
+    "lng": 105.85761,
+    "weight": 9,
+    "routesCount": 9
+  },
+  {
+    "idx": 39,
+    "lat": 20.95731,
+    "lng": 105.84279,
+    "weight": 9,
+    "routesCount": 9
+  },
+  {
+    "idx": 40,
+    "lat": 20.9371,
+    "lng": 105.84505,
+    "weight": 9,
+    "routesCount": 9
+  },
+  {
+    "idx": 41,
+    "lat": 20.97087,
+    "lng": 105.83497,
+    "weight": 9,
+    "routesCount": 9
+  },
+  {
+    "idx": 42,
+    "lat": 21.01559,
+    "lng": 105.78425,
+    "weight": 9,
+    "routesCount": 9
+  },
+  {
+    "idx": 43,
+    "lat": 20.96699,
+    "lng": 105.77072,
+    "weight": 9,
+    "routesCount": 9
+  },
+  {
+    "idx": 44,
+    "lat": 20.97636,
+    "lng": 105.78285,
+    "weight": 9,
+    "routesCount": 9
+  },
+  {
+    "idx": 45,
+    "lat": 21.15816,
+    "lng": 105.7794,
+    "weight": 9,
+    "routesCount": 9
+  },
+  {
+    "idx": 46,
+    "lat": 20.87715,
+    "lng": 105.86212,
+    "weight": 9,
+    "routesCount": 9
+  },
+  {
+    "idx": 47,
+    "lat": 20.92193,
+    "lng": 105.85225,
+    "weight": 9,
+    "routesCount": 9
+  },
+  {
+    "idx": 48,
+    "lat": 20.94884,
+    "lng": 105.74706,
+    "weight": 9,
+    "routesCount": 9
+  },
+  {
+    "idx": 49,
+    "lat": 21.0177,
+    "lng": 105.84926,
+    "weight": 8,
+    "routesCount": 8
+  },
+  {
+    "idx": 50,
+    "lat": 21.02926,
+    "lng": 105.85664,
+    "weight": 8,
+    "routesCount": 8
+  },
+  {
+    "idx": 51,
+    "lat": 20.99036,
+    "lng": 105.84105,
+    "weight": 8,
+    "routesCount": 8
+  },
+  {
+    "idx": 52,
+    "lat": 21.02503,
+    "lng": 105.85012,
+    "weight": 8,
+    "routesCount": 8
+  },
+  {
+    "idx": 53,
+    "lat": 21.04625,
+    "lng": 105.78137,
+    "weight": 8,
+    "routesCount": 8
+  },
+  {
+    "idx": 54,
+    "lat": 21.06108,
+    "lng": 105.80907,
+    "weight": 8,
+    "routesCount": 8
+  },
+  {
+    "idx": 55,
+    "lat": 20.94924,
+    "lng": 105.84423,
+    "weight": 8,
+    "routesCount": 8
+  },
+  {
+    "idx": 56,
+    "lat": 20.99246,
+    "lng": 105.80433,
+    "weight": 8,
+    "routesCount": 8
+  },
+  {
+    "idx": 57,
+    "lat": 20.98938,
+    "lng": 105.79996,
+    "weight": 8,
+    "routesCount": 8
+  },
+  {
+    "idx": 58,
+    "lat": 21.06788,
+    "lng": 105.78531,
+    "weight": 8,
+    "routesCount": 8
+  },
+  {
+    "idx": 59,
+    "lat": 20.97312,
+    "lng": 105.77878,
+    "weight": 8,
+    "routesCount": 8
+  },
+  {
+    "idx": 60,
+    "lat": 21.04504,
+    "lng": 105.84589,
+    "weight": 8,
+    "routesCount": 8
+  },
+  {
+    "idx": 61,
+    "lat": 21.12916,
+    "lng": 105.7801,
+    "weight": 8,
+    "routesCount": 8
+  },
+  {
+    "idx": 62,
+    "lat": 20.8909,
+    "lng": 105.85699,
+    "weight": 8,
+    "routesCount": 8
+  },
+  {
+    "idx": 63,
+    "lat": 21.05908,
+    "lng": 105.83407,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 64,
+    "lat": 21.00839,
+    "lng": 105.83971,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 65,
+    "lat": 21.00633,
+    "lng": 105.83103,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 66,
+    "lat": 20.99766,
+    "lng": 105.84136,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 67,
+    "lat": 21.03073,
+    "lng": 105.82202,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 68,
+    "lat": 21.04605,
+    "lng": 105.80638,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 69,
+    "lat": 21.03072,
+    "lng": 105.81537,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 70,
+    "lat": 20.94441,
+    "lng": 105.84436,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 71,
+    "lat": 20.92966,
+    "lng": 105.84808,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 72,
+    "lat": 21.02385,
+    "lng": 105.81068,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 73,
+    "lat": 20.98589,
+    "lng": 105.79499,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 74,
+    "lat": 21.13497,
+    "lng": 105.77843,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 75,
+    "lat": 21.15306,
+    "lng": 105.77917,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 76,
+    "lat": 21.05217,
+    "lng": 105.73594,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 77,
+    "lat": 20.89846,
+    "lng": 105.85452,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 78,
+    "lat": 20.83703,
+    "lng": 105.87418,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 79,
+    "lat": 20.979,
+    "lng": 105.77289,
+    "weight": 7,
+    "routesCount": 7
+  },
+  {
+    "idx": 80,
+    "lat": 21.06465,
+    "lng": 105.83075,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 81,
+    "lat": 20.96909,
+    "lng": 105.82904,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 82,
+    "lat": 21.02132,
+    "lng": 105.8256,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 83,
+    "lat": 21.01497,
+    "lng": 105.80543,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 84,
+    "lat": 21.01093,
+    "lng": 105.81071,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 85,
+    "lat": 21.00277,
+    "lng": 105.82111,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 86,
+    "lat": 21.05206,
+    "lng": 105.8088,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 87,
+    "lat": 21.02318,
+    "lng": 105.84467,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 88,
+    "lat": 21.05116,
+    "lng": 105.8396,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 89,
+    "lat": 21.06134,
+    "lng": 105.89381,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 90,
+    "lat": 21.01198,
+    "lng": 105.86368,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 91,
+    "lat": 20.99111,
+    "lng": 105.86304,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 92,
+    "lat": 21.06127,
+    "lng": 105.78373,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 93,
+    "lat": 20.96832,
+    "lng": 105.78689,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 94,
+    "lat": 21.01333,
+    "lng": 105.85175,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 95,
+    "lat": 20.95207,
+    "lng": 105.75122,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 96,
+    "lat": 21.0469,
+    "lng": 105.83673,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 97,
+    "lat": 21.00992,
+    "lng": 105.79892,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 98,
+    "lat": 20.97962,
+    "lng": 105.78695,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 99,
+    "lat": 21.06469,
+    "lng": 105.80601,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 100,
+    "lat": 21.14747,
+    "lng": 105.77887,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 101,
+    "lat": 21.02281,
+    "lng": 105.93398,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 102,
+    "lat": 21.0289,
+    "lng": 105.91839,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 103,
+    "lat": 20.90872,
+    "lng": 105.85264,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 104,
+    "lat": 20.88319,
+    "lng": 105.85889,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 105,
+    "lat": 20.85884,
+    "lng": 105.86869,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 106,
+    "lat": 20.91366,
+    "lng": 105.8524,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 107,
+    "lat": 21.08277,
+    "lng": 105.90353,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 108,
+    "lat": 21.10272,
+    "lng": 105.87181,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 109,
+    "lat": 21.11331,
+    "lng": 105.84681,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 110,
+    "lat": 20.94486,
+    "lng": 105.74198,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 111,
+    "lat": 21.02563,
+    "lng": 105.90899,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 112,
+    "lat": 21.05106,
+    "lng": 105.88502,
+    "weight": 6,
+    "routesCount": 6
+  },
+  {
+    "idx": 113,
+    "lat": 21.09016,
+    "lng": 105.78584,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 114,
+    "lat": 21.03934,
+    "lng": 105.80661,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 115,
+    "lat": 21.01793,
+    "lng": 105.82981,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 116,
+    "lat": 21.07826,
+    "lng": 105.90904,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 117,
+    "lat": 21.03847,
+    "lng": 105.83981,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 118,
+    "lat": 21.01656,
+    "lng": 105.81497,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 119,
+    "lat": 21.06725,
+    "lng": 105.81095,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 120,
+    "lat": 21.07451,
+    "lng": 105.81329,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 121,
+    "lat": 21.03337,
+    "lng": 105.76986,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 122,
+    "lat": 21.00506,
+    "lng": 105.8045,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 123,
+    "lat": 21.03658,
+    "lng": 105.81495,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 124,
+    "lat": 21.08107,
+    "lng": 105.78806,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 125,
+    "lat": 21.03898,
+    "lng": 105.79938,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 126,
+    "lat": 21.00794,
+    "lng": 105.86665,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 127,
+    "lat": 20.99984,
+    "lng": 105.81528,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 128,
+    "lat": 21.04599,
+    "lng": 105.79765,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 129,
+    "lat": 20.98128,
+    "lng": 105.81061,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 130,
+    "lat": 21.01131,
+    "lng": 105.78711,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 131,
+    "lat": 20.99145,
+    "lng": 105.78433,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 132,
+    "lat": 21.13877,
+    "lng": 105.85507,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 133,
+    "lat": 21.18615,
+    "lng": 105.78033,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 134,
+    "lat": 21.00323,
+    "lng": 105.9636,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 135,
+    "lat": 21.01125,
+    "lng": 105.95227,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 136,
+    "lat": 21.02992,
+    "lng": 105.91332,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 137,
+    "lat": 21.02613,
+    "lng": 105.92561,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 138,
+    "lat": 20.87154,
+    "lng": 105.86456,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 139,
+    "lat": 20.86613,
+    "lng": 105.86622,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 140,
+    "lat": 20.80295,
+    "lng": 105.88413,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 141,
+    "lat": 21.10226,
+    "lng": 105.87844,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 142,
+    "lat": 21.13386,
+    "lng": 105.84367,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 143,
+    "lat": 20.94004,
+    "lng": 105.73375,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 144,
+    "lat": 20.93457,
+    "lng": 105.72293,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 145,
+    "lat": 21.00482,
+    "lng": 105.76451,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 146,
+    "lat": 21.00983,
+    "lng": 105.5236,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 147,
+    "lat": 21.05967,
+    "lng": 105.79813,
+    "weight": 5,
+    "routesCount": 5
+  },
+  {
+    "idx": 148,
+    "lat": 21.07699,
+    "lng": 105.82098,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 149,
+    "lat": 21.00101,
+    "lng": 105.85063,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 150,
+    "lat": 20.97113,
+    "lng": 105.82445,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 151,
+    "lat": 21.03449,
+    "lng": 105.80506,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 152,
+    "lat": 21.00794,
+    "lng": 105.81501,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 153,
+    "lat": 21.00274,
+    "lng": 105.84124,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 154,
+    "lat": 21.04626,
+    "lng": 105.7875,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 155,
+    "lat": 21.01914,
+    "lng": 105.8358,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 156,
+    "lat": 21.00337,
+    "lng": 105.86126,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 157,
+    "lat": 21.07147,
+    "lng": 105.90355,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 158,
+    "lat": 21.06658,
+    "lng": 105.8989,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 159,
+    "lat": 20.98423,
+    "lng": 105.86377,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 160,
+    "lat": 20.97639,
+    "lng": 105.81467,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 161,
+    "lat": 20.97017,
+    "lng": 105.77461,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 162,
+    "lat": 21.02764,
+    "lng": 105.78682,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 163,
+    "lat": 20.9842,
+    "lng": 105.84608,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 164,
+    "lat": 21.19259,
+    "lng": 105.78073,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 165,
+    "lat": 21.21638,
+    "lng": 105.77842,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 166,
+    "lat": 21.16628,
+    "lng": 105.7796,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 167,
+    "lat": 21.2143,
+    "lng": 105.80157,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 168,
+    "lat": 21.1415,
+    "lng": 105.84474,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 169,
+    "lat": 20.96179,
+    "lng": 105.79926,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 170,
+    "lat": 20.95517,
+    "lng": 105.8509,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 171,
+    "lat": 21.01127,
+    "lng": 105.93538,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 172,
+    "lat": 20.91495,
+    "lng": 105.87035,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 173,
+    "lat": 21.01989,
+    "lng": 105.94015,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 174,
+    "lat": 20.84777,
+    "lng": 105.8717,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 175,
+    "lat": 20.81564,
+    "lng": 105.88351,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 176,
+    "lat": 20.77638,
+    "lng": 105.89587,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 177,
+    "lat": 20.77142,
+    "lng": 105.90128,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 178,
+    "lat": 20.76585,
+    "lng": 105.90647,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 179,
+    "lat": 20.75885,
+    "lng": 105.91194,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 180,
+    "lat": 20.75113,
+    "lng": 105.91084,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 181,
+    "lat": 20.72318,
+    "lng": 105.91236,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 182,
+    "lat": 21.08821,
+    "lng": 105.90263,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 183,
+    "lat": 21.09779,
+    "lng": 105.88928,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 184,
+    "lat": 21.10283,
+    "lng": 105.8668,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 185,
+    "lat": 21.1061,
+    "lng": 105.85247,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 186,
+    "lat": 21.12846,
+    "lng": 105.84358,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 187,
+    "lat": 21.05805,
+    "lng": 105.7274,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 188,
+    "lat": 21.06674,
+    "lng": 105.7137,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 189,
+    "lat": 21.08643,
+    "lng": 105.66541,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 190,
+    "lat": 21.11893,
+    "lng": 105.52552,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 191,
+    "lat": 21.12427,
+    "lng": 105.51989,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 192,
+    "lat": 21.13236,
+    "lng": 105.51126,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 193,
+    "lat": 20.92563,
+    "lng": 105.70971,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 194,
+    "lat": 21.01056,
+    "lng": 105.9668,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 195,
+    "lat": 21.06899,
+    "lng": 105.80257,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 196,
+    "lat": 21.01047,
+    "lng": 105.73696,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 197,
+    "lat": 21.01058,
+    "lng": 105.71099,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 198,
+    "lat": 21.00206,
+    "lng": 105.63028,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 199,
+    "lat": 21.00309,
+    "lng": 105.641,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 200,
+    "lat": 21.00301,
+    "lng": 105.66885,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 201,
+    "lat": 20.98453,
+    "lng": 105.77452,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 202,
+    "lat": 20.85441,
+    "lng": 105.76766,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 203,
+    "lat": 20.79693,
+    "lng": 105.77899,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 204,
+    "lat": 20.78878,
+    "lng": 105.78115,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 205,
+    "lat": 20.96874,
+    "lng": 105.75414,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 206,
+    "lat": 20.9868,
+    "lng": 105.77936,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 207,
+    "lat": 20.75914,
+    "lng": 105.76666,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 208,
+    "lat": 20.73859,
+    "lng": 105.77032,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 209,
+    "lat": 21.11564,
+    "lng": 105.4954,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 210,
+    "lat": 20.95303,
+    "lng": 105.78753,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 211,
+    "lat": 21.0674,
+    "lng": 105.79776,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 212,
+    "lat": 21.20909,
+    "lng": 105.81518,
+    "weight": 4,
+    "routesCount": 4
+  },
+  {
+    "idx": 213,
+    "lat": 21.08279,
+    "lng": 105.81716,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 214,
+    "lat": 20.96485,
+    "lng": 105.82569,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 215,
+    "lat": 21.02341,
+    "lng": 105.80383,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 216,
+    "lat": 20.96624,
+    "lng": 105.83694,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 217,
+    "lat": 21.04239,
+    "lng": 105.75969,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 218,
+    "lat": 21.02502,
+    "lng": 105.79802,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 219,
+    "lat": 21.03105,
+    "lng": 105.85094,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 220,
+    "lat": 21.01637,
+    "lng": 105.82314,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 221,
+    "lat": 21.01277,
+    "lng": 105.8177,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 222,
+    "lat": 21.04237,
+    "lng": 105.81655,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 223,
+    "lat": 20.99954,
+    "lng": 105.79724,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 224,
+    "lat": 21.03947,
+    "lng": 105.7678,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 225,
+    "lat": 20.99577,
+    "lng": 105.80025,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 226,
+    "lat": 20.98168,
+    "lng": 105.81667,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 227,
+    "lat": 20.96185,
+    "lng": 105.81476,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 228,
+    "lat": 21.00788,
+    "lng": 105.87968,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 229,
+    "lat": 21.0205,
+    "lng": 105.89227,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 230,
+    "lat": 21.01574,
+    "lng": 105.88786,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 231,
+    "lat": 21.02343,
+    "lng": 105.81972,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 232,
+    "lat": 21.0121,
+    "lng": 105.79223,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 233,
+    "lat": 20.98538,
+    "lng": 105.80807,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 234,
+    "lat": 20.97294,
+    "lng": 105.81873,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 235,
+    "lat": 20.95157,
+    "lng": 105.81847,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 236,
+    "lat": 20.95722,
+    "lng": 105.80756,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 237,
+    "lat": 20.96608,
+    "lng": 105.79114,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 238,
+    "lat": 21.03735,
+    "lng": 105.84627,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 239,
+    "lat": 21.04269,
+    "lng": 105.82424,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 240,
+    "lat": 20.97603,
+    "lng": 105.76162,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 241,
+    "lat": 20.98113,
+    "lng": 105.76818,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 242,
+    "lat": 21.02509,
+    "lng": 105.83299,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 243,
+    "lat": 21.00114,
+    "lng": 105.82918,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 244,
+    "lat": 21.03942,
+    "lng": 105.86503,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 245,
+    "lat": 21.01722,
+    "lng": 105.79874,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 246,
+    "lat": 21.02329,
+    "lng": 105.7901,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 247,
+    "lat": 20.9989,
+    "lng": 105.8361,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 248,
+    "lat": 21.14021,
+    "lng": 105.85014,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 249,
+    "lat": 21.13783,
+    "lng": 105.85988,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 250,
+    "lat": 21.1418,
+    "lng": 105.77868,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 251,
+    "lat": 21.20501,
+    "lng": 105.77978,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 252,
+    "lat": 21.21065,
+    "lng": 105.8097,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 253,
+    "lat": 21.20988,
+    "lng": 105.70526,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 254,
+    "lat": 21.04407,
+    "lng": 105.75456,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 255,
+    "lat": 21.25718,
+    "lng": 105.84846,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 256,
+    "lat": 21.01581,
+    "lng": 105.94591,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 257,
+    "lat": 21.00724,
+    "lng": 105.9574,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 258,
+    "lat": 21.03688,
+    "lng": 105.90208,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 259,
+    "lat": 21.04181,
+    "lng": 105.89721,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 260,
+    "lat": 20.85402,
+    "lng": 105.87024,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 261,
+    "lat": 20.82604,
+    "lng": 105.88044,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 262,
+    "lat": 20.79094,
+    "lng": 105.89012,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 263,
+    "lat": 20.74128,
+    "lng": 105.91343,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 264,
+    "lat": 21.19829,
+    "lng": 105.82538,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 265,
+    "lat": 21.27024,
+    "lng": 105.85556,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 266,
+    "lat": 21.20267,
+    "lng": 105.84887,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 267,
+    "lat": 21.06388,
+    "lng": 105.71879,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 268,
+    "lat": 21.06987,
+    "lng": 105.70761,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 269,
+    "lat": 21.07496,
+    "lng": 105.69877,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 270,
+    "lat": 21.08129,
+    "lng": 105.67844,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 271,
+    "lat": 21.08381,
+    "lng": 105.67162,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 272,
+    "lat": 21.10423,
+    "lng": 105.54693,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 273,
+    "lat": 21.10229,
+    "lng": 105.55278,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 274,
+    "lat": 20.92975,
+    "lng": 105.71583,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 275,
+    "lat": 21.01952,
+    "lng": 105.96523,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 276,
+    "lat": 21.12313,
+    "lng": 105.77488,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 277,
+    "lat": 21.027,
+    "lng": 105.89677,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 278,
+    "lat": 21.02923,
+    "lng": 105.76445,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 279,
+    "lat": 21.01073,
+    "lng": 105.75702,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 280,
+    "lat": 21.01145,
+    "lng": 105.72384,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 281,
+    "lat": 21.00357,
+    "lng": 105.66303,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 282,
+    "lat": 21.00365,
+    "lng": 105.63567,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 283,
+    "lat": 20.90102,
+    "lng": 105.57981,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 284,
+    "lat": 21.00271,
+    "lng": 105.64834,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 285,
+    "lat": 21.00466,
+    "lng": 105.68812,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 286,
+    "lat": 21.00332,
+    "lng": 105.77486,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 287,
+    "lat": 21.00165,
+    "lng": 105.78261,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 288,
+    "lat": 21.04136,
+    "lng": 105.7813,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 289,
+    "lat": 20.98563,
+    "lng": 105.76811,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 290,
+    "lat": 20.9893,
+    "lng": 105.76473,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 291,
+    "lat": 20.99454,
+    "lng": 105.75949,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 292,
+    "lat": 21.05828,
+    "lng": 105.57495,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 293,
+    "lat": 20.99559,
+    "lng": 105.7544,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 294,
+    "lat": 20.86384,
+    "lng": 105.76174,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 295,
+    "lat": 20.84977,
+    "lng": 105.76965,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 296,
+    "lat": 20.83567,
+    "lng": 105.77159,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 297,
+    "lat": 20.97777,
+    "lng": 105.74664,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 298,
+    "lat": 21.16198,
+    "lng": 105.78807,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 299,
+    "lat": 21.1577,
+    "lng": 105.80222,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 300,
+    "lat": 21.04256,
+    "lng": 105.90666,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 301,
+    "lat": 20.88814,
+    "lng": 105.76731,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 302,
+    "lat": 20.88908,
+    "lng": 105.78684,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 303,
+    "lat": 20.70503,
+    "lng": 105.91024,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 304,
+    "lat": 21.0303,
+    "lng": 105.88086,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 305,
+    "lat": 21.04716,
+    "lng": 105.91085,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 306,
+    "lat": 21.04131,
+    "lng": 105.73799,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 307,
+    "lat": 21.04805,
+    "lng": 105.92298,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 308,
+    "lat": 20.91979,
+    "lng": 105.70089,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 309,
+    "lat": 20.74755,
+    "lng": 105.76812,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 310,
+    "lat": 20.80779,
+    "lng": 105.70912,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 311,
+    "lat": 21.11323,
+    "lng": 105.49048,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 312,
+    "lat": 21.11303,
+    "lng": 105.47661,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 313,
+    "lat": 21.03654,
+    "lng": 105.73809,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 314,
+    "lat": 21.05746,
+    "lng": 105.91663,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 315,
+    "lat": 21.12619,
+    "lng": 105.50219,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 316,
+    "lat": 21.12093,
+    "lng": 105.49925,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 317,
+    "lat": 20.84265,
+    "lng": 105.77065,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 318,
+    "lat": 21.00553,
+    "lng": 105.73206,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 319,
+    "lat": 20.93284,
+    "lng": 105.85274,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 320,
+    "lat": 21.19816,
+    "lng": 105.83779,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 321,
+    "lat": 20.99179,
+    "lng": 105.94499,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 322,
+    "lat": 20.99229,
+    "lng": 105.96018,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 323,
+    "lat": 21.00497,
+    "lng": 105.75616,
+    "weight": 3,
+    "routesCount": 3
+  },
+  {
+    "idx": 324,
+    "lat": 21.08831,
+    "lng": 105.81467,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 325,
+    "lat": 21.08989,
+    "lng": 105.80534,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 326,
+    "lat": 21.08966,
+    "lng": 105.79545,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 327,
+    "lat": 21.07317,
+    "lng": 105.82546,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 328,
+    "lat": 21.1036,
+    "lng": 105.82589,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 329,
+    "lat": 21.02554,
+    "lng": 105.82749,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 330,
+    "lat": 21.02816,
+    "lng": 105.80706,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 331,
+    "lat": 21.01313,
+    "lng": 105.77562,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 332,
+    "lat": 20.98311,
+    "lng": 105.83526,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 333,
+    "lat": 21.09614,
+    "lng": 105.92779,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 334,
+    "lat": 21.08598,
+    "lng": 105.91792,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 335,
+    "lat": 21.08171,
+    "lng": 105.91364,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 336,
+    "lat": 21.08388,
+    "lng": 105.77957,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 337,
+    "lat": 21.03963,
+    "lng": 105.82792,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 338,
+    "lat": 21.04194,
+    "lng": 105.83636,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 339,
+    "lat": 21.00404,
+    "lng": 105.79876,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 340,
+    "lat": 20.98662,
+    "lng": 105.81333,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 341,
+    "lat": 20.97888,
+    "lng": 105.82169,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 342,
+    "lat": 21.01412,
+    "lng": 105.84144,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 343,
+    "lat": 21.00447,
+    "lng": 105.84724,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 344,
+    "lat": 20.99419,
+    "lng": 105.83126,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 345,
+    "lat": 21.01319,
+    "lng": 105.85889,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 346,
+    "lat": 21.00036,
+    "lng": 105.87227,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 347,
+    "lat": 21.01219,
+    "lng": 105.88424,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 348,
+    "lat": 21.07597,
+    "lng": 105.79451,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 349,
+    "lat": 21.0134,
+    "lng": 105.82681,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 350,
+    "lat": 21.0857,
+    "lng": 105.7872,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 351,
+    "lat": 20.94407,
+    "lng": 105.83668,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 352,
+    "lat": 20.94594,
+    "lng": 105.82916,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 353,
+    "lat": 20.94851,
+    "lng": 105.82433,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 354,
+    "lat": 20.99481,
+    "lng": 105.7904,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 355,
+    "lat": 21.02073,
+    "lng": 105.85315,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 356,
+    "lat": 21.01917,
+    "lng": 105.79263,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 357,
+    "lat": 21.0056,
+    "lng": 105.85495,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 358,
+    "lat": 21.01463,
+    "lng": 105.83361,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 359,
+    "lat": 21.1215,
+    "lng": 105.78263,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 360,
+    "lat": 21.18098,
+    "lng": 105.7803,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 361,
+    "lat": 21.1759,
+    "lng": 105.78003,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 362,
+    "lat": 21.19893,
+    "lng": 105.78037,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 363,
+    "lat": 21.22134,
+    "lng": 105.7702,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 364,
+    "lat": 21.21451,
+    "lng": 105.79634,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 365,
+    "lat": 21.12554,
+    "lng": 105.82696,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 366,
+    "lat": 21.21638,
+    "lng": 105.78952,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 367,
+    "lat": 21.15374,
+    "lng": 105.81627,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 368,
+    "lat": 21.14718,
+    "lng": 105.83863,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 369,
+    "lat": 21.1522,
+    "lng": 105.82946,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 370,
+    "lat": 21.15125,
+    "lng": 105.83465,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 371,
+    "lat": 21.15205,
+    "lng": 105.75416,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 372,
+    "lat": 21.15841,
+    "lng": 105.74887,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 373,
+    "lat": 21.16998,
+    "lng": 105.73938,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 374,
+    "lat": 21.17682,
+    "lng": 105.73034,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 375,
+    "lat": 21.18614,
+    "lng": 105.72225,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 376,
+    "lat": 21.20531,
+    "lng": 105.70701,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 377,
+    "lat": 21.04971,
+    "lng": 105.74013,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 378,
+    "lat": 21.04671,
+    "lng": 105.7478,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 379,
+    "lat": 21.0719,
+    "lng": 105.7772,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 380,
+    "lat": 21.01317,
+    "lng": 105.90472,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 381,
+    "lat": 21.00737,
+    "lng": 105.90723,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 382,
+    "lat": 21.25734,
+    "lng": 105.85602,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 383,
+    "lat": 21.25605,
+    "lng": 105.86279,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 384,
+    "lat": 21.00697,
+    "lng": 105.93319,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 385,
+    "lat": 21.06314,
+    "lng": 105.90825,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 386,
+    "lat": 20.92167,
+    "lng": 105.85945,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 387,
+    "lat": 20.91823,
+    "lng": 105.86613,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 388,
+    "lat": 20.99117,
+    "lng": 105.97463,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 389,
+    "lat": 20.98489,
+    "lng": 105.97977,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 390,
+    "lat": 20.97733,
+    "lng": 105.98817,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 391,
+    "lat": 20.95818,
+    "lng": 105.999,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 392,
+    "lat": 20.968,
+    "lng": 105.99311,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 393,
+    "lat": 21.04738,
+    "lng": 105.89367,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 394,
+    "lat": 20.84279,
+    "lng": 105.87278,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 395,
+    "lat": 20.83075,
+    "lng": 105.8777,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 396,
+    "lat": 20.73387,
+    "lng": 105.91243,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 397,
+    "lat": 21.10405,
+    "lng": 105.85752,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 398,
+    "lat": 21.12216,
+    "lng": 105.84475,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 399,
+    "lat": 21.15091,
+    "lng": 105.84618,
+    "weight": 2,
+    "routesCount": 2
+  },
+  {
+    "idx": 400,
+    "lat": 21.17685,
+    "lng": 105.84699,
+    "weight": 2,
+    "routesCount": 2
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "jest",
+    "test:unit": "jest tests/unit",
+    "test:integration": "jest tests/integration",
+    "test:e2e": "jest tests/e2e --runInBand",
+    "test:coverage": "jest --coverage",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js --watch src/",
+    "build:graph": "node scripts/buildBinaryGraph.js",
+    "build:kdtree": "node scripts/buildKdTree.js",
+    "build:data": "npm run build:kdtree && npm run build:graph"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.8.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "firebase-admin": "^13.6.1",
+    "nodemon": "^3.1.9",
+    "redis": "^5.11.0"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}

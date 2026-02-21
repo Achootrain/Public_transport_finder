@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log*
+.env
+tests
+scripts
+jest.config.js
+.git
+.gitignore
+docker-compose.yaml
+Dockerfile
