@@ -26,14 +26,28 @@ pipeline {
                 sh 'docker image prune -f'
             }
         }
+
+        stage('4. Deploy Infrastructure (Nginx)') {
+            steps {
+                script {
+                    sh 'sudo cp nginx.conf /etc/nginx/sites-available/default'
+                    
+                    sh 'sudo nginx -t'
+                    
+                    sh 'sudo systemctl reload nginx'
+                    
+                    echo 'Nginx configuration updated successfully!'
+                }
+            }
+        }
     }
     
     post {
         success {
-            echo 'Deploy successful!'
+            echo 'All stages completed successfully!'
         }
         failure {
-            echo '  Deploy failed. Please check the logs.'
+            echo 'Pipeline failed. Please check the logs in the specific stage.'
         }
     }
 }
