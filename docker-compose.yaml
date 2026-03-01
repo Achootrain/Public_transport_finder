@@ -2,18 +2,24 @@ version: '3.8'
 
 services:
   # ── Node.js API Server ──────────────────────────────────────
-  server:
+  node_sever:
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: transit_server
+      dockerfile: node_sever/Dockerfile
+    container_name: node-sever
     ports:
       - "3001:3001"
     environment:
       - PORT=3001
       - REDIS_URL=redis://redis:6379
     env_file:
-      - .env
+      - node_sever/.env
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3001/ || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
     depends_on:
       redis:
         condition: service_healthy
@@ -28,7 +34,7 @@ services:
   # ── Redis Cache ─────────────────────────────────────────────
   redis:
     image: redis:7-alpine
-    container_name: transit_redis
+    container_name: redis
     ports:
       - "6379:6379"
     volumes:
@@ -52,6 +58,50 @@ services:
           memory: 600M
     networks:
       - transit_net
+  
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins-server
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - ./jenkins/jenkins.yaml:/var/jenkins_home/jenkins.yaml
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - CASC_JENKINS_CONFIG=/var/jenkins_home/jenkins.yaml
+    depends_on:
+      sonar:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - transit_net
+
+  sonar:
+    image: sonarqube:community
+    container_name: sonarqube-server
+    ports:
+      - "9000:9000"
+    environment:
+      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9000/api/system/status || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+    networks:
+      - transit_net
 
 networks:
   transit_net:
@@ -59,3 +109,7 @@ networks:
 
 volumes:
   redis_data:
+  jenkins_home:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:

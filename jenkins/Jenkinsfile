@@ -1,47 +1,71 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'NodeJS-22'
+    }
+
     stages {
-        stage('1. Pulling code from GitHub') {
+        stage('1. Checkout') {
             steps {
                 checkout scm
             }
         }
 
-        stage('2. Scanning (SonarQube)') {
+        stage('2. Install Dependencies') {
+            steps {
+                dir('node_sever') {
+                    sh 'npm ci'
+                }
+            }
+        }
+
+        stage('3. Run Tests & Coverage') {
+            steps {
+                dir('node_sever') {
+                    sh 'npm run test:coverage'
+                }
+            }
+        }
+
+        stage('4. SonarQube Analysis') {
             steps {
                 script {
                     def scannerHome = tool 'SonarScanner'
-                    withSonarQubeEnv('MySonarServer') { 
-                        sh "${scannerHome}/bin/sonar-scanner"
+                    withSonarQubeEnv('MySonarServer') {
+                        sh "${scannerHome}/bin/sonar-scanner -Dproject.settings=sonar/sonar-project.properties"
                     }
                 }
             }
         }
 
-        stage('3. Build & Deploy (Docker Compose)') {
+        stage('5. Quality Gate') {
+            steps {
+                timeout(time: 5, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+
+        stage('6. Build & Deploy') {
             steps {
                 sh 'docker compose up -d --build'
-                
                 sh 'docker image prune -f'
             }
         }
 
-        stage('4. Configure Nginx') {
+        stage('7. Configure Nginx') {
             steps {
                 script {
                     sh 'sudo cp nginx.conf /etc/nginx/sites-available/default'
-                    
                     sh 'sudo nginx -t'
-                    
                     sh 'sudo systemctl reload nginx'
-                    
                     echo 'Nginx configuration updated successfully!'
                 }
             }
         }
     }
-    
+
     post {
         success {
             echo 'All stages completed successfully!'

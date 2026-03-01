@@ -1,4 +1,4 @@
 
-node_modules/
-test/
+node_sever/node_modules/
+node_sever/.env
 .env
