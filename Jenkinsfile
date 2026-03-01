@@ -27,7 +27,7 @@ pipeline {
             }
         }
 
-        stage('4. Deploy Infrastructure (Nginx)') {
+        stage('4. Configure Nginx') {
             steps {
                 script {
                     sh 'sudo cp nginx.conf /etc/nginx/sites-available/default'
