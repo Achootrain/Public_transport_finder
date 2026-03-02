@@ -1,0 +1,9 @@
+configuration-as-code
+sonar
+nodejs
+workflow-aggregator
+workflow-multibranch
+git
+credentials
+plain-credentials
+docker-workflow

@@ -1,0 +1,91 @@
+pipeline {
+    agent any
+
+    tools {
+        nodejs 'NodeJS-22'
+    }
+
+    stages {
+        stage('1. Setup Infrastructure') {
+            steps {
+                echo 'Starting app infrastructure (Redis, SonarQube)...'
+                sh 'docker-compose -f docker-compose.yaml up -d'
+            }
+        }
+
+        stage('2. Configure SonarQube Token') {
+            steps {
+                echo 'Generating SonarQube token inside Jenkins container...'
+                sh 'docker exec jenkins-server python3 /opt/setup-jenkins/setup-jenkins.py'
+                echo 'Reloading JCasC to pick up the new token...'
+                sh 'docker exec jenkins-server bash -c "curl -sf -X POST http://localhost:8080/reload-configuration-as-code/?casc-reload-token=\$(cat /var/jenkins_home/secrets/casc-reload-token 2>/dev/null || echo auto)"'
+            }
+        }
+
+        stage('3. Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('4. Install Dependencies') {
+            steps {
+                dir('node_sever') {
+                    sh 'npm ci'
+                }
+            }
+        }
+
+        stage('5. Run Tests & Coverage') {
+            steps {
+                dir('node_sever') {
+                    sh 'npm run test:coverage'
+                }
+            }
+        }
+
+        stage('6. SonarQube Analysis') {
+            steps {
+                script {
+                    def scannerHome = tool 'SonarScanner'
+                    withSonarQubeEnv('MySonarServer') {
+                        sh "${scannerHome}/bin/sonar-scanner -Dproject.settings=sonar/sonar-project.properties"
+                    }
+                }
+            }
+        }
+
+        stage('7. Quality Gate') {
+            steps {
+                timeout(time: 5, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+
+        stage('8. Build & Deploy') {
+            steps {
+                sh 'docker-compose -f docker-compose.yaml up -d --build'
+                sh 'docker image prune -f'
+            }
+        }
+
+        stage('9. Configure Nginx') {
+            steps {
+                sh 'sudo cp nginx.conf /etc/nginx/sites-available/default'
+                sh 'sudo nginx -t'
+                sh 'sudo systemctl reload nginx'
+                echo 'Nginx configuration updated successfully!'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'All stages completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed. Please check the logs in the specific stage.'
+        }
+    }
+}

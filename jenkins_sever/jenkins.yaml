@@ -1,0 +1,47 @@
+jenkins:
+  numExecutors: 2
+  nodes:
+    - permanent:
+        name: "worker-node-1"
+
+# ── Credentials ────────────────────────────────────────────
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - string:
+              scope: GLOBAL
+              id: "sonar-token"
+              secret: "${SONAR_TOKEN}"
+              description: "SonarQube token (injected via environment)"
+
+# ── SonarQube server configuration ───────────────────────
+unclassified:
+  sonarGlobalConfiguration:
+    buildWrapperEnabled: true
+    installations:
+      - name: "MySonarServer"
+        serverUrl: "${SONAR_INTERNAL_URL:-http://sonarqube-server:9000}"
+        credentialsId: "sonar-token"
+
+# ── Tool auto-installers ─────────────────────────────────────
+tool:
+  sonarRunnerInstallation:
+    installations:
+      - name: "SonarScanner"
+        home: ""
+        properties:
+          - installSource:
+              installers:
+                - sonarRunnerInstaller:
+                    id: "6.2.1.4610"
+  nodejs:
+    installations:
+      - name: "NodeJS-22"
+        home: ""
+        properties:
+          - installSource:
+              installers:
+                - nodeJSInstaller:
+                    id: "22.14.0"
+                    npmPackagesRefreshHours: 72

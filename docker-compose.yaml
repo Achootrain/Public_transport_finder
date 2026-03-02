@@ -58,26 +58,8 @@ services:
           memory: 600M
     networks:
       - transit_net
-  
-  jenkins:
-    image: jenkins/jenkins:lts
-    container_name: jenkins-server
-    ports:
-      - "8080:8080"
-      - "50000:50000"
-    volumes:
-      - jenkins_home:/var/jenkins_home
-      - ./jenkins/jenkins.yaml:/var/jenkins_home/jenkins.yaml
-      - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      - CASC_JENKINS_CONFIG=/var/jenkins_home/jenkins.yaml
-    depends_on:
-      sonar:
-        condition: service_healthy
-    restart: unless-stopped
-    networks:
-      - transit_net
 
+  # ── SonarQube ──────────────────────────────────────────────
   sonar:
     image: sonarqube:community
     container_name: sonarqube-server
@@ -109,7 +91,6 @@ networks:
 
 volumes:
   redis_data:
-  jenkins_home:
   sonarqube_data:
   sonarqube_extensions:
   sonarqube_logs:
