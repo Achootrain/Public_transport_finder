@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS-22'
-    }
-
     stages {
         stage('1. Setup Infrastructure') {
             steps {
@@ -16,35 +12,29 @@ pipeline {
         stage('2. Configure SonarQube Token') {
             steps {
                 echo 'Generating SonarQube token inside Jenkins container...'
-                sh 'docker exec jenkins-server python3 /opt/setup-jenkins/setup-jenkins.py'
+                sh 'python3 /opt/setup-jenkins/setup-jenkins.py'
                 echo 'Reloading JCasC to pick up the new token...'
-                sh 'docker exec jenkins-server bash -c "curl -sf -X POST http://localhost:8080/reload-configuration-as-code/?casc-reload-token=\$(cat /var/jenkins_home/secrets/casc-reload-token 2>/dev/null || echo auto)"'
+                sh 'curl -sf -X POST "http://localhost:8080/reload-configuration-as-code/?casc-reload-token=$(cat /var/jenkins_home/secrets/casc-reload-token 2>/dev/null || echo auto)"'
             }
         }
 
-        stage('3. Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
-        stage('4. Install Dependencies') {
+        stage('3. Install Dependencies') {
             steps {
                 dir('node_sever') {
-                    sh 'npm ci'
+                    sh 'docker run --rm --volumes-from jenkins-server -w "$WORKSPACE/node_sever" node:22-bookworm-slim npm ci'
                 }
             }
         }
 
-        stage('5. Run Tests & Coverage') {
+        stage('4. Run Tests & Coverage') {
             steps {
                 dir('node_sever') {
-                    sh 'npm run test:coverage'
+                    sh 'docker run --rm --volumes-from jenkins-server -w "$WORKSPACE/node_sever" node:22-bookworm-slim npm run test:coverage'
                 }
             }
         }
 
-        stage('6. SonarQube Analysis') {
+        stage('5. SonarQube Analysis') {
             steps {
                 script {
                     def scannerHome = tool 'SonarScanner'
@@ -55,7 +45,7 @@ pipeline {
             }
         }
 
-        stage('7. Quality Gate') {
+        stage('6. Quality Gate') {
             steps {
                 timeout(time: 5, unit: 'MINUTES') {
                     waitForQualityGate abortPipeline: true
@@ -63,19 +53,10 @@ pipeline {
             }
         }
 
-        stage('8. Build & Deploy') {
+        stage('7. Build & Deploy') {
             steps {
                 sh 'docker-compose -f docker-compose.yaml up -d --build'
                 sh 'docker image prune -f'
-            }
-        }
-
-        stage('9. Configure Nginx') {
-            steps {
-                sh 'sudo cp nginx.conf /etc/nginx/sites-available/default'
-                sh 'sudo nginx -t'
-                sh 'sudo systemctl reload nginx'
-                echo 'Nginx configuration updated successfully!'
             }
         }
     }
