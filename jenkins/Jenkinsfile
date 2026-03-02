@@ -36,69 +36,90 @@ pipeline {
             }
         }
 
-        stage('Bootstrap SonarQube Admin') {
-                steps {
-                        withCredentials([usernamePassword(credentialsId: 'sonarqube-admin', usernameVariable: 'SONAR_ADMIN_USER', passwordVariable: 'SONAR_ADMIN_PASSWORD')]) {
-                                sh '''
-                                    set -euo pipefail
+        stage('Resolve SonarQube Admin Credentials') {
+            steps {
+                script {
+                    def envUser = (env.SONARQUBE_ADMIN_USER ?: 'admin').trim()
+                    def envPass = (env.SONARQUBE_DESIRED_ADMIN_PASSWORD ?: env.SONARQUBE_ADMIN_PASSWORD ?: '').trim()
 
-                                    desired_check=$(curl -sS -u "${SONAR_ADMIN_USER}:${SONAR_ADMIN_PASSWORD}" \
-                                        "${SONAR_HOST_URL}/api/authentication/validate" || true)
-
-                                    if echo "$desired_check" | grep -q '"valid":true'; then
-                                        echo "SonarQube admin credential is already valid"
-                                        exit 0
-                                    fi
-
-                                    default_check=$(curl -sS -u "admin:admin" \
-                                        "${SONAR_HOST_URL}/api/authentication/validate" || true)
-
-                                    if echo "$default_check" | grep -q '"valid":true'; then
-                                        echo "Bootstrapping SonarQube admin password from default credential"
-                                        curl -sS -f -u "admin:admin" \
-                                            -X POST "${SONAR_HOST_URL}/api/users/change_password" \
-                                            --data-urlencode "login=${SONAR_ADMIN_USER}" \
-                                            --data-urlencode "previousPassword=admin" \
-                                            --data-urlencode "password=${SONAR_ADMIN_PASSWORD}" >/dev/null
-                                        exit 0
-                                    fi
-
-                                    echo "Unable to authenticate SonarQube with configured admin credential or default admin/admin"
-                                    exit 1
-                                '''
+                    if (envPass) {
+                        env.SONAR_ADMIN_USER_RUNTIME = envUser
+                        env.SONAR_ADMIN_PASSWORD_RUNTIME = envPass
+                        echo 'Using SonarQube admin credentials from environment variables'
+                    } else {
+                        try {
+                            withCredentials([usernamePassword(credentialsId: 'sonarqube-admin', usernameVariable: 'SONAR_ADMIN_USER', passwordVariable: 'SONAR_ADMIN_PASSWORD')]) {
+                                env.SONAR_ADMIN_USER_RUNTIME = SONAR_ADMIN_USER
+                                env.SONAR_ADMIN_PASSWORD_RUNTIME = SONAR_ADMIN_PASSWORD
+                            }
+                            echo 'Using SonarQube admin credentials from Jenkins credential sonarqube-admin'
+                        } catch (Exception ignored) {
+                            error('SonarQube admin credentials not found. Set SONARQUBE_DESIRED_ADMIN_PASSWORD (recommended) or create Jenkins credential sonarqube-admin.')
                         }
+                    }
                 }
+            }
+        }
+
+        stage('Bootstrap SonarQube Admin') {
+            steps {
+                sh '''
+                    set -euo pipefail
+
+                    desired_check=$(curl -sS -u "${SONAR_ADMIN_USER_RUNTIME}:${SONAR_ADMIN_PASSWORD_RUNTIME}" \
+                        "${SONAR_HOST_URL}/api/authentication/validate" || true)
+
+                    if echo "$desired_check" | grep -q '"valid":true'; then
+                        echo "SonarQube admin credential is already valid"
+                        exit 0
+                    fi
+
+                    default_check=$(curl -sS -u "admin:admin" \
+                        "${SONAR_HOST_URL}/api/authentication/validate" || true)
+
+                    if echo "$default_check" | grep -q '"valid":true'; then
+                        echo "Bootstrapping SonarQube admin password from default credential"
+                        curl -sS -f -u "admin:admin" \
+                            -X POST "${SONAR_HOST_URL}/api/users/change_password" \
+                            --data-urlencode "login=${SONAR_ADMIN_USER_RUNTIME}" \
+                            --data-urlencode "previousPassword=admin" \
+                            --data-urlencode "password=${SONAR_ADMIN_PASSWORD_RUNTIME}" >/dev/null
+                        exit 0
+                    fi
+
+                    echo "Unable to authenticate SonarQube with configured admin credential or default admin/admin"
+                    exit 1
+                '''
+            }
         }
 
         stage('Generate SonarQube Token') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'sonarqube-admin', usernameVariable: 'SONAR_ADMIN_USER', passwordVariable: 'SONAR_ADMIN_PASSWORD')]) {
-                    script {
-                        env.SONAR_TOKEN_NAME_RUNTIME = params.SONAR_TOKEN_NAME.trim()
-                        if (!env.SONAR_TOKEN_NAME_RUNTIME) {
-                            error('SONAR_TOKEN_NAME cannot be empty')
-                        }
+                script {
+                    env.SONAR_TOKEN_NAME_RUNTIME = params.SONAR_TOKEN_NAME.trim()
+                    if (!env.SONAR_TOKEN_NAME_RUNTIME) {
+                        error('SONAR_TOKEN_NAME cannot be empty')
+                    }
 
-                        env.SONAR_TOKEN_RUNTIME = sh(
-                            returnStdout: true,
-                            script: '''
-                                set -euo pipefail
+                    env.SONAR_TOKEN_RUNTIME = sh(
+                        returnStdout: true,
+                        script: '''
+                            set -euo pipefail
 
-                                curl -sS -u "${SONAR_ADMIN_USER}:${SONAR_ADMIN_PASSWORD}" \
-                                  -X POST "${SONAR_HOST_URL}/api/user_tokens/revoke" \
-                                  --data-urlencode "name=${SONAR_TOKEN_NAME_RUNTIME}" >/dev/null || true
+                            curl -sS -u "${SONAR_ADMIN_USER_RUNTIME}:${SONAR_ADMIN_PASSWORD_RUNTIME}" \
+                              -X POST "${SONAR_HOST_URL}/api/user_tokens/revoke" \
+                              --data-urlencode "name=${SONAR_TOKEN_NAME_RUNTIME}" >/dev/null || true
 
-                                response=$(curl -sS -u "${SONAR_ADMIN_USER}:${SONAR_ADMIN_PASSWORD}" \
-                                  -X POST "${SONAR_HOST_URL}/api/user_tokens/generate" \
-                                  --data-urlencode "name=${SONAR_TOKEN_NAME_RUNTIME}")
+                            response=$(curl -sS -u "${SONAR_ADMIN_USER_RUNTIME}:${SONAR_ADMIN_PASSWORD_RUNTIME}" \
+                              -X POST "${SONAR_HOST_URL}/api/user_tokens/generate" \
+                              --data-urlencode "name=${SONAR_TOKEN_NAME_RUNTIME}")
 
-                                echo "$response" | sed -n 's/.*"token":"\\([^"]*\\)".*/\\1/p'
-                            '''
-                        ).trim()
+                            echo "$response" | sed -n 's/.*"token":"\\([^"]*\\)".*/\\1/p'
+                        '''
+                    ).trim()
 
-                        if (!env.SONAR_TOKEN_RUNTIME) {
-                            error('Failed to generate SonarQube token from API response')
-                        }
+                    if (!env.SONAR_TOKEN_RUNTIME) {
+                        error('Failed to generate SonarQube token from API response')
                     }
                 }
             }
@@ -136,15 +157,15 @@ pipeline {
 
     post {
         always {
-            withCredentials([usernamePassword(credentialsId: 'sonarqube-admin', usernameVariable: 'SONAR_ADMIN_USER', passwordVariable: 'SONAR_ADMIN_PASSWORD')]) {
-                sh '''
-                    if [ -n "${SONAR_TOKEN_NAME_RUNTIME:-}" ]; then
-                      curl -sS -u "${SONAR_ADMIN_USER}:${SONAR_ADMIN_PASSWORD}" \
-                        -X POST "${SONAR_HOST_URL}/api/user_tokens/revoke" \
-                        --data-urlencode "name=${SONAR_TOKEN_NAME_RUNTIME}" >/dev/null || true
-                    fi
-                '''
-            }
+                        sh '''
+                                if [ -n "${SONAR_TOKEN_NAME_RUNTIME:-}" ] && [ -n "${SONAR_ADMIN_USER_RUNTIME:-}" ] && [ -n "${SONAR_ADMIN_PASSWORD_RUNTIME:-}" ]; then
+                                    curl -sS -u "${SONAR_ADMIN_USER_RUNTIME}:${SONAR_ADMIN_PASSWORD_RUNTIME}" \
+                                        -X POST "${SONAR_HOST_URL}/api/user_tokens/revoke" \
+                                        --data-urlencode "name=${SONAR_TOKEN_NAME_RUNTIME}" >/dev/null || true
+                                else
+                                    echo "Skipping SonarQube token revoke: runtime admin credentials not available"
+                                fi
+                        '''
             sh 'docker compose -f "${COMPOSE_FILE}" ps || true'
         }
         success {
