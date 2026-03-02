@@ -1,0 +1,80 @@
+pipeline {
+    agent any
+
+    options {
+        timestamps()
+        disableConcurrentBuilds()
+    }
+
+    parameters {
+        string(name: 'SONAR_HOST_URL', defaultValue: 'http://localhost:9000', description: 'SonarQube server URL')
+        string(name: 'SONAR_PROJECT_KEY', defaultValue: 'node_sever', description: 'SonarQube project key')
+        string(name: 'SONAR_SOURCES', defaultValue: 'node_sever/src', description: 'Source path for analysis')
+    }
+
+    environment {
+        APP_SERVICE = 'node_sever'
+        APP_DIR = 'node_sever'
+        COMPOSE_FILE = 'docker-compose.yaml'
+        SONAR_TOKEN = credentials('sonarqube-token')
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Validate Workspace') {
+            steps {
+                sh '''
+                    test -f "${COMPOSE_FILE}"
+                    test -d "${APP_DIR}"
+                    test -f "${APP_DIR}/package.json"
+                '''
+            }
+        }
+
+        stage('SonarQube Scan') {
+            agent {
+                docker {
+                    image 'sonarsource/sonar-scanner-cli:latest'
+                    args '-u root:root'
+                    reuseNode true
+                }
+            }
+            steps {
+                sh '''
+                    sonar-scanner \
+                      -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
+                      -Dsonar.sources=${SONAR_SOURCES} \
+                      -Dsonar.host.url=${SONAR_HOST_URL} \
+                      -Dsonar.token=${SONAR_TOKEN}
+                '''
+            }
+        }
+
+        stage('Deploy node_sever') {
+            steps {
+                sh '''
+                    docker compose -f "${COMPOSE_FILE}" pull ${APP_SERVICE} || true
+                    docker compose -f "${COMPOSE_FILE}" up -d --build ${APP_SERVICE}
+                    docker compose -f "${COMPOSE_FILE}" ps ${APP_SERVICE}
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            sh 'docker compose -f "${COMPOSE_FILE}" ps || true'
+        }
+        success {
+            echo 'Pipeline completed: SonarQube scan and node_sever deployment succeeded.'
+        }
+        failure {
+            echo 'Pipeline failed. Check SonarQube credentials, Docker daemon, and compose logs.'
+        }
+    }
+}
