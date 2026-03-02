@@ -39,6 +39,9 @@ COPY setup-jenkins.py /opt/setup-jenkins/setup-jenkins.py
 COPY jenkins.yaml /usr/share/jenkins/ref/casc_configs/jenkins.yaml
 ENV CASC_JENKINS_CONFIG=/var/jenkins_home/casc_configs/jenkins.yaml
 
+# Allow jenkins user to talk to the mounted Docker socket (GID 0 on Docker Desktop)
+RUN usermod -aG root jenkins
+
 USER jenkins
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
