@@ -10,6 +10,7 @@ pipeline {
         stage('1. Setup Infrastructure') {
             steps {
                 echo 'Starting Redis and SonarQube...'
+                sh 'touch node_sever/.env'   // compose validates env_file for all services
                 sh "docker-compose -p ${COMPOSE_PROJECT} -f ${COMPOSE_FILE} up -d redis sonar"
 
                 echo 'Connecting Jenkins to the infrastructure network...'

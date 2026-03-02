@@ -6,17 +6,20 @@ ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
 USER root
 
 # Minimal tooling needed by the pipeline and setup script.
-# - docker CLI + compose plugin (talks to mounted /var/run/docker.sock)
+# - docker CLI (static binary – docker.io on trixie ships only dockerd)
+# - docker-compose (standalone v1 wrapper)
 # - python3 + pip for setup-jenkins.py
 RUN apt-get update && \
         apt-get install -y --no-install-recommends \
-            docker.io \
             docker-compose \
             python3 \
             python3-pip \
             ca-certificates \
             curl \
-        && rm -rf /var/lib/apt/lists/*
+        && rm -rf /var/lib/apt/lists/* \
+        && ARCH=$(uname -m) \
+        && curl -fsSL "https://download.docker.com/linux/static/stable/${ARCH}/docker-27.5.1.tgz" \
+           | tar xz --strip-components=1 -C /usr/local/bin docker/docker
 
 # Install Python deps used by setup-jenkins.py
 RUN pip3 install --break-system-packages python-sonarqube-api
