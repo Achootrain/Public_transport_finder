@@ -26,6 +26,10 @@ services:
       - DOCKER_HOST=tcp://docker:2376
       - DOCKER_CERT_PATH=/certs/client
       - DOCKER_TLS_VERIFY=1
+      - SONARQUBE_TOKEN=${SONARQUBE_TOKEN:-}
+      - SONARQUBE_ADMIN_USER=${SONARQUBE_ADMIN_USER:-admin}
+      - SONARQUBE_ADMIN_PASSWORD=${SONARQUBE_ADMIN_PASSWORD:-}
+      - SONARQUBE_DESIRED_ADMIN_PASSWORD=${SONARQUBE_DESIRED_ADMIN_PASSWORD:-}
     volumes:
       - jenkins-data:/var/jenkins_home
       - jenkins-docker-certs:/certs/client:ro

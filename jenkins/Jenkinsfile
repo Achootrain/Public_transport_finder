@@ -10,13 +10,13 @@ pipeline {
         string(name: 'SONAR_HOST_URL', defaultValue: 'http://localhost:9000', description: 'SonarQube server URL')
         string(name: 'SONAR_PROJECT_KEY', defaultValue: 'node_sever', description: 'SonarQube project key')
         string(name: 'SONAR_SOURCES', defaultValue: 'node_sever/src', description: 'Source path for analysis')
+        string(name: 'SONAR_TOKEN_NAME', defaultValue: 'jenkins-node-sever', description: 'Managed SonarQube token name (auto-created and revoked by pipeline)')
     }
 
     environment {
         APP_SERVICE = 'node_sever'
         APP_DIR = 'node_sever'
         COMPOSE_FILE = 'docker-compose.yaml'
-        SONAR_TOKEN = credentials('sonarqube-token')
     }
 
     stages {
@@ -36,7 +36,75 @@ pipeline {
             }
         }
 
-        stage('SonarQube Scan') {
+        stage('Bootstrap SonarQube Admin') {
+                steps {
+                        withCredentials([usernamePassword(credentialsId: 'sonarqube-admin', usernameVariable: 'SONAR_ADMIN_USER', passwordVariable: 'SONAR_ADMIN_PASSWORD')]) {
+                                sh '''
+                                    set -euo pipefail
+
+                                    desired_check=$(curl -sS -u "${SONAR_ADMIN_USER}:${SONAR_ADMIN_PASSWORD}" \
+                                        "${SONAR_HOST_URL}/api/authentication/validate" || true)
+
+                                    if echo "$desired_check" | grep -q '"valid":true'; then
+                                        echo "SonarQube admin credential is already valid"
+                                        exit 0
+                                    fi
+
+                                    default_check=$(curl -sS -u "admin:admin" \
+                                        "${SONAR_HOST_URL}/api/authentication/validate" || true)
+
+                                    if echo "$default_check" | grep -q '"valid":true'; then
+                                        echo "Bootstrapping SonarQube admin password from default credential"
+                                        curl -sS -f -u "admin:admin" \
+                                            -X POST "${SONAR_HOST_URL}/api/users/change_password" \
+                                            --data-urlencode "login=${SONAR_ADMIN_USER}" \
+                                            --data-urlencode "previousPassword=admin" \
+                                            --data-urlencode "password=${SONAR_ADMIN_PASSWORD}" >/dev/null
+                                        exit 0
+                                    fi
+
+                                    echo "Unable to authenticate SonarQube with configured admin credential or default admin/admin"
+                                    exit 1
+                                '''
+                        }
+                }
+        }
+
+        stage('Generate SonarQube Token') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'sonarqube-admin', usernameVariable: 'SONAR_ADMIN_USER', passwordVariable: 'SONAR_ADMIN_PASSWORD')]) {
+                    script {
+                        env.SONAR_TOKEN_NAME_RUNTIME = params.SONAR_TOKEN_NAME.trim()
+                        if (!env.SONAR_TOKEN_NAME_RUNTIME) {
+                            error('SONAR_TOKEN_NAME cannot be empty')
+                        }
+
+                        env.SONAR_TOKEN_RUNTIME = sh(
+                            returnStdout: true,
+                            script: '''
+                                set -euo pipefail
+
+                                curl -sS -u "${SONAR_ADMIN_USER}:${SONAR_ADMIN_PASSWORD}" \
+                                  -X POST "${SONAR_HOST_URL}/api/user_tokens/revoke" \
+                                  --data-urlencode "name=${SONAR_TOKEN_NAME_RUNTIME}" >/dev/null || true
+
+                                response=$(curl -sS -u "${SONAR_ADMIN_USER}:${SONAR_ADMIN_PASSWORD}" \
+                                  -X POST "${SONAR_HOST_URL}/api/user_tokens/generate" \
+                                  --data-urlencode "name=${SONAR_TOKEN_NAME_RUNTIME}")
+
+                                echo "$response" | sed -n 's/.*"token":"\\([^"]*\\)".*/\\1/p'
+                            '''
+                        ).trim()
+
+                        if (!env.SONAR_TOKEN_RUNTIME) {
+                            error('Failed to generate SonarQube token from API response')
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('SonarQube Analysis') {
             agent {
                 docker {
                     image 'sonarsource/sonar-scanner-cli:latest'
@@ -50,7 +118,7 @@ pipeline {
                       -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
                       -Dsonar.sources=${SONAR_SOURCES} \
                       -Dsonar.host.url=${SONAR_HOST_URL} \
-                      -Dsonar.token=${SONAR_TOKEN}
+                      -Dsonar.token=${SONAR_TOKEN_RUNTIME}
                 '''
             }
         }
@@ -68,13 +136,22 @@ pipeline {
 
     post {
         always {
+            withCredentials([usernamePassword(credentialsId: 'sonarqube-admin', usernameVariable: 'SONAR_ADMIN_USER', passwordVariable: 'SONAR_ADMIN_PASSWORD')]) {
+                sh '''
+                    if [ -n "${SONAR_TOKEN_NAME_RUNTIME:-}" ]; then
+                      curl -sS -u "${SONAR_ADMIN_USER}:${SONAR_ADMIN_PASSWORD}" \
+                        -X POST "${SONAR_HOST_URL}/api/user_tokens/revoke" \
+                        --data-urlencode "name=${SONAR_TOKEN_NAME_RUNTIME}" >/dev/null || true
+                    fi
+                '''
+            }
             sh 'docker compose -f "${COMPOSE_FILE}" ps || true'
         }
         success {
             echo 'Pipeline completed: SonarQube scan and node_sever deployment succeeded.'
         }
         failure {
-            echo 'Pipeline failed. Check SonarQube credentials, Docker daemon, and compose logs.'
+            echo 'Pipeline failed. Check SonarQube admin credentials, SonarQube API reachability, Docker daemon, and compose logs.'
         }
     }
 }
