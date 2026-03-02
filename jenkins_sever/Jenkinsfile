@@ -14,7 +14,16 @@ pipeline {
                 echo 'Generating SonarQube token inside Jenkins container...'
                 sh 'python3 /opt/setup-jenkins/setup-jenkins.py'
                 echo 'Reloading JCasC to pick up the new token...'
-                sh 'curl -sf -X POST "http://localhost:8080/reload-configuration-as-code/?casc-reload-token=$(cat /var/jenkins_home/secrets/casc-reload-token 2>/dev/null || echo auto)"'
+                sh '''
+                    set -euo pipefail
+                    cookieJar="$(mktemp)"
+                    crumbJson="$(curl -sf -c "${cookieJar}" http://localhost:8080/crumbIssuer/api/json)"
+                    crumbField="$(python3 -c 'import json,sys; d=json.load(sys.stdin); print(d["crumbRequestField"])' <<<"${crumbJson}")"
+                    crumbValue="$(python3 -c 'import json,sys; d=json.load(sys.stdin); print(d["crumb"])' <<<"${crumbJson}")"
+                    reloadToken="$(cat /var/jenkins_home/secrets/casc-reload-token 2>/dev/null || echo auto)"
+
+                    curl -sf -b "${cookieJar}" -H "${crumbField}: ${crumbValue}" -X POST "http://localhost:8080/reload-configuration-as-code/?casc-reload-token=${reloadToken}"
+                '''
             }
         }
 
