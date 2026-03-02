@@ -1,18 +1,27 @@
 pipeline {
     agent any
 
+    environment {
+        COMPOSE_PROJECT = 'ptf-infra'
+        COMPOSE_FILE    = 'docker-compose.yaml'
+    }
+
     stages {
         stage('1. Setup Infrastructure') {
             steps {
-                echo 'Starting app infrastructure (Redis, SonarQube)...'
-                sh 'docker-compose -f docker-compose.yaml up -d'
+                echo 'Starting Redis and SonarQube...'
+                sh "docker-compose -p ${COMPOSE_PROJECT} -f ${COMPOSE_FILE} up -d redis sonar"
+
+                echo 'Connecting Jenkins to the infrastructure network...'
+                sh "docker network connect ${COMPOSE_PROJECT}_transit_net jenkins-server || true"
             }
         }
 
         stage('2. Configure SonarQube Token') {
             steps {
-                echo 'Generating SonarQube token inside Jenkins container...'
+                echo 'Generating SonarQube token (waits for SonarQube health)...'
                 sh 'python3 /opt/setup-jenkins/setup-jenkins.py'
+
                 echo 'Reloading JCasC to pick up the new token...'
                 sh '''
                     set -euo pipefail
@@ -22,24 +31,37 @@ pipeline {
                     crumbValue="$(python3 -c 'import json,sys; d=json.load(sys.stdin); print(d["crumb"])' <<<"${crumbJson}")"
                     reloadToken="$(cat /var/jenkins_home/secrets/casc-reload-token 2>/dev/null || echo auto)"
 
-                    curl -sf -b "${cookieJar}" -H "${crumbField}: ${crumbValue}" -X POST "http://localhost:8080/reload-configuration-as-code/?casc-reload-token=${reloadToken}"
+                    curl -sf -b "${cookieJar}" \
+                         -H "${crumbField}: ${crumbValue}" \
+                         -X POST "http://localhost:8080/reload-configuration-as-code/?casc-reload-token=${reloadToken}"
                 '''
             }
         }
 
         stage('3. Install Dependencies') {
             steps {
-                dir('node_sever') {
-                    sh 'docker run --rm --volumes-from jenkins-server -w "$WORKSPACE/node_sever" node:22-bookworm-slim npm ci'
-                }
+                sh '''
+                    docker run --rm \
+                        --user "$(id -u):$(id -g)" \
+                        --env HOME=/tmp \
+                        --volumes-from jenkins-server \
+                        -w "$WORKSPACE/node_sever" \
+                        node:22-bookworm-slim npm ci
+                '''
             }
         }
 
         stage('4. Run Tests & Coverage') {
             steps {
-                dir('node_sever') {
-                    sh 'docker run --rm --volumes-from jenkins-server -w "$WORKSPACE/node_sever" node:22-bookworm-slim npm run test:coverage'
-                }
+                sh '''
+                    docker run --rm \
+                        --user "$(id -u):$(id -g)" \
+                        --env HOME=/tmp \
+                        --volumes-from jenkins-server \
+                        --network ${COMPOSE_PROJECT}_transit_net \
+                        -w "$WORKSPACE/node_sever" \
+                        node:22-bookworm-slim npm run test:coverage
+                '''
             }
         }
 
@@ -64,18 +86,21 @@ pipeline {
 
         stage('7. Build & Deploy') {
             steps {
-                sh 'docker-compose -f docker-compose.yaml up -d --build'
+                sh "docker-compose -p ${COMPOSE_PROJECT} -f ${COMPOSE_FILE} up -d --build"
                 sh 'docker image prune -f'
             }
         }
     }
 
     post {
+        always {
+            sh "docker network disconnect ${COMPOSE_PROJECT}_transit_net jenkins-server || true"
+        }
         success {
             echo 'All stages completed successfully!'
         }
         failure {
-            echo 'Pipeline failed. Please check the logs in the specific stage.'
+            echo 'Pipeline failed. Check the logs for the failing stage above.'
         }
     }
 }
